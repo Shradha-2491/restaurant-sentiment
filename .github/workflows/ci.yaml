@@ -90,8 +90,8 @@ jobs:
           context: ./backend
           push: true
           tags: |
-            ghcr.io/${{ steps.image.outputs.owner }}/restaurant-sentiment-workshop-backend:latest
-            ghcr.io/${{ steps.image.outputs.owner }}/restaurant-sentiment-workshop-backend:${{ github.sha }}
+            ghcr.io/${{ steps.image.outputs.owner }}/restaurant-sentiment-backend:latest
+            ghcr.io/${{ steps.image.outputs.owner }}/restaurant-sentiment-backend:${{ github.sha }}
 
       - name: Build and publish frontend
         uses: docker/build-push-action@v6
@@ -99,5 +99,5 @@ jobs:
           context: ./frontend
           push: true
           tags: |
-            ghcr.io/${{ steps.image.outputs.owner }}/restaurant-sentiment-workshop-frontend:latest
-            ghcr.io/${{ steps.image.outputs.owner }}/restaurant-sentiment-workshop-frontend:${{ github.sha }}
+            ghcr.io/${{ steps.image.outputs.owner }}/restaurant-sentiment-frontend:latest
+            ghcr.io/${{ steps.image.outputs.owner }}/restaurant-sentiment-frontend:${{ github.sha }}
