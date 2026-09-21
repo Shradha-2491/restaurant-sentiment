@@ -1,0 +1,12 @@
+services:
+  backend:
+    image: ghcr.io/kaleatharva/restaurant-sentiment-workshop-backend:latest
+    restart: unless-stopped
+
+  frontend:
+    image: ghcr.io/kaleatharva/restaurant-sentiment-workshop-frontend:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
